@@ -37,6 +37,10 @@ Prog Labs
 
 ## Создайте репозиторий для дисциплины на GitHub: https://github.com/zbtka/programming
 
+## Склонируйте его себе на ПК.
+### git clone:
+https://github.com/zbtka/programming/tree/main/lab00
+
 ## Напишите свою первую программу.
 ```c
 #include <stdio.h>
@@ -60,9 +64,28 @@ int main()
 
 ![Alt text](image-5.png)
 
+
+
+## Сделайте Комит и пуш
+![Alt text](image-6.png)
+![Alt text](image-8.png)
+
+## Шпоргалка по работе с Git:
+
+
+git add .
+
+git commit -m"wap lab00"
+
+git push
+
 ## Список используемых источников
 * https://github.com/still-coding/report_demo/blob/main/README.md
 * https://doka.guide/tools/markdown/
+
+
+
+
 
 
 
