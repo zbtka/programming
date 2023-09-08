@@ -66,11 +66,11 @@ int main()
 
 
 
-## Сделайте Комит и пуш
+## Сделайте commit и push
 ![Alt text](image-6.png)
 ![Alt text](image-8.png)
 
-## Шпоргалка по работе с Git:
+## Шпаргалка по работе с Git:
 
 
 git add .
