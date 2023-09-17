@@ -70,14 +70,14 @@ int main()
 ![Alt text](image-6.png)
 ![Alt text](image-8.png)
 
-## Шпаргалка по работе с Git:
+# Шпаргалка по работе с Git:
 
 
-git add .
+## git add .
 
-git commit -m"wap lab00"
-
-git push
+## git commit -m"wap lab00"
+ 
+## git push
 
 # Список используемых источников
 ## * https://github.com/still-coding/report_demo/blob/main/README.md
