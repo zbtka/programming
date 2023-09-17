@@ -79,9 +79,9 @@ git commit -m"wap lab00"
 
 git push
 
-## Список используемых источников
-* https://github.com/still-coding/report_demo/blob/main/README.md
-* https://doka.guide/tools/markdown/
+# Список используемых источников
+## * https://github.com/still-coding/report_demo/blob/main/README.md
+## * https://doka.guide/tools/markdown/
 
 
 
