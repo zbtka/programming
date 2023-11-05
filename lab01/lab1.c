@@ -12,7 +12,6 @@ int main() {
     printf("Enter a3 -> ");
     scanf("%f", &a3);
 
-    // Нахождение наибольшего параметра и его номера
     float max_value;
     int max_number;
 
@@ -28,11 +27,11 @@ int main() {
     }
 
     if ((int)max_value % 2 == 0) {
-        // Наибольший параметр четный
+    	
         float percentage = (max_value / (a1 + a2 + a3)) * 100;
-        printf("The largest parameter (a%d) is even. Its value is %.2f, and it represents %.2f%% of the sum of all parameters.\n", max_number, max_value, percentage);
+        printf("(a%d) %.2f %.2f%% \n", max_number, max_value, percentage);
     } else {
-        // Наибольший параметр нечетный
+
         float min_value;
 
         if (a1 <= a2 && a1 <= a3) {
@@ -44,7 +43,7 @@ int main() {
         }
 
         float difference = max_value - min_value;
-        printf("The largest parameter (a%d) is odd. The difference between the largest and smallest parameters is %.2f.\n", max_number, difference);
+        printf("(a%d) %.2f.\n", max_number, difference);
     }
 
     return 0;
