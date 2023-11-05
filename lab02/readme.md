@@ -17,7 +17,7 @@
  ## Вариант - 4
 ![image](https://github.com/zbtka/programming/assets/144006033/23b13133-2f28-4dcb-8b7d-1fd2f7efd386)
  ### 1. Напишите программу по варианту, используя оператор цикла while (нечётные варианты) или do while (чётные варианты).
- ```
+ ```c
 #include <stdio.h>
 #include <math.h>
 
@@ -46,7 +46,7 @@ int main() {
 }
  ```
  ### 2. Напишите программу, используя оператор цикла for.
- ```
+```c
 #include <stdio.h>
 #include <math.h>
 
