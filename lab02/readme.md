@@ -15,7 +15,14 @@
 
 ## Этапы работы
  ## Вариант - 4
-![image](https://github.com/zbtka/programming/assets/144006033/23b13133-2f28-4dcb-8b7d-1fd2f7efd386)
+ 
+$$ f(n) =
+ \begin{cases}
+ \sqrt{x+1} - \sqrt{x} - \frac{1}{2}, & \quad 0 \leq x \leq 1; \\
+e^{-x-\frac{1}{x}}, & \quad 1 < x \leq 2.
+\end{cases}
+$$
+
  ### 1. Напишите программу по варианту, используя оператор цикла while (нечётные варианты) или do while (чётные варианты).
  ```c
 #include <stdio.h>
