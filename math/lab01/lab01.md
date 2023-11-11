@@ -88,6 +88,10 @@ $\lim\limits_{n \to \infty} \frac{\sin n + n^2}{2n^2+n+1} = \frac{1}{2}$
 
 $\lim\limits_{n \to \infty} \frac{\sin n + n^2}{2n^2+n+1} = \frac{1}{2}$
 
+$|\frac{\sin n + n^2}{2n^2 + n + 1} -\frac{1}{2}| $
+
+
+
 
   
 
