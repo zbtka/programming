@@ -14,7 +14,8 @@
 ## Ход работы:
 ### 1.Разобрал код программы из примера.
 ### 2.Составил блок-схему Алгоритма решения варианта №4
-![image](https://github.com/zbtka/programming/assets/144006033/3c3a053b-c751-4a77-bc9e-e1eb7b169f86)
+![изображение](https://github.com/zbtka/programming/assets/144006033/32c5c2e6-3a08-4d83-8bac-af5d974eb75f)
+
 ### 3.Написал программу, решающую задачу по своему варианту.
 ## Задача
 ![image](https://github.com/zbtka/programming/assets/144006033/8fa1e650-2ae3-4baa-ad1c-cb8cf60b4044)
