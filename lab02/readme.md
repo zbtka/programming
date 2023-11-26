@@ -23,7 +23,7 @@ e^{-x-\frac{1}{x}}, & \quad 1 < x \leq 2.
 \end{cases}
 $$
 
- ### 1. Напишите программу по варианту, используя оператор цикла while (нечётные варианты) или do while (чётные варианты).
+ ### 1. Напишите программу по варианту, используя оператор цикла do while.
  ```c
 #include <stdio.h>
 #include <math.h>
@@ -86,9 +86,14 @@ int main() {
 ### 3. Постройте график с использованием gnuplot.
 ![image](https://github.com/zbtka/programming/assets/144006033/2746fc74-ab23-4e76-a97d-2d45ff5ecc34)
 
-### 4. Составьте блок-схемы.
-![image](https://github.com/zbtka/programming/assets/144006033/21e54a74-250a-4c88-ad69-01b254b59a19)
-#### Блок схемы для обеих программ идентичны.
+### 4. Составьте блок-схемы. 
+#### Блок-схема для оператора цикла do while:
+![image](https://github.com/zbtka/programming/assets/144006033/0ac32169-3a23-4aca-8cff-eff28f098a71)
+
+
+#### Блок-схема для оператора цикла for:
+![image](https://github.com/zbtka/programming/assets/144006033/4eb3557d-c51e-43bb-a624-6d2798ed41a9)
+
 ### Список использованных источников.
 1. https://habr.com/ru/companies/ruvds/articles/517450/
 2. https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions
