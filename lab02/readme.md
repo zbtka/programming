@@ -88,11 +88,13 @@ int main() {
 
 ### 4. Составьте блок-схемы. 
 #### Блок-схема для оператора цикла do while:
-![image](https://github.com/zbtka/programming/assets/144006033/0ac32169-3a23-4aca-8cff-eff28f098a71)
+![image](https://github.com/zbtka/programming/assets/144006033/2bdac7b5-cd5c-466c-8afc-d7301f92056a)
+
 
 
 #### Блок-схема для оператора цикла for:
-![image](https://github.com/zbtka/programming/assets/144006033/4eb3557d-c51e-43bb-a624-6d2798ed41a9)
+![image](https://github.com/zbtka/programming/assets/144006033/4bd51265-51be-48a2-b460-8399f030eaaf)
+
 
 ### Список использованных источников.
 1. https://habr.com/ru/companies/ruvds/articles/517450/
