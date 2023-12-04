@@ -88,7 +88,7 @@ int main() {
 
 ### 4. Составьте блок-схемы. 
 #### Блок-схема для оператора цикла do while:
-![image](https://github.com/zbtka/programming/assets/144006033/2bdac7b5-cd5c-466c-8afc-d7301f92056a)
+![изображение](https://github.com/zbtka/programming/assets/144006033/1485a088-33bb-4c63-97b2-ac3c9ec4bed9)
 
 
 
