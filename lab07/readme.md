@@ -15,3 +15,21 @@
 ```
 * Функция для расчёта
 $a_i = a_{i-2}+\frac{a_{i-1}}{a^{a-1}}. a_0=a_1=1$
+
+### Вариант кода без использования рекурсии.
+```py
+
+```
+### Результат работы программы
+
+### Вариант кода с использования рекурсии.
+```py
+
+```
+### Результат работы программы
+
+
+## Используемые источники
+* https://www.youtube.com/watch?v=IJDJ0kBx2LM
+* https://proglib.io/p/samouchitel-po-python-dlya-nachinayushchih-chast-13-rekursivnye-funkcii-2023-01-23
+* https://habr.com/ru/articles/337030/
