@@ -76,7 +76,7 @@ int main() {
 ```
 
 ## Результат работы программы:
-![image](https://github.com/zbtka/programming/assets/144006033/bc03bc7b-aa31-480b-b34a-1c1798505d76)
+![image](https://github.com/zbtka/programming/assets/144006033/ab05e778-c049-47c5-bb46-8ca093deca74)
 
 
 ## 4. Список использованных источников
