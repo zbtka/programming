@@ -19,36 +19,54 @@
 ### 2. Код
 ```c
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main() {
-    int arrA[] = {1, 7, 4, 3, 7};
-    int arrB[] = {2, 4, 7, 7, 3};
-    int sizeA = sizeof(arrA) / sizeof(arrA[0]);
-    int sizeB = sizeof(arrB) / sizeof(arrB[0]);
-    int maxSize;
+void fill(int n, int a[]) {
+    for (int i = 0; i < n; i++)
+        a[i] = rand() % 11;
+}
 
-    if (sizeA > sizeB) {
-        maxSize = sizeA;
-    } else {
-        maxSize = sizeB;
-    }
-
-    int arrC[maxSize];
-
-    int indexC = 0;
-    for (int i = 0; i < sizeA; i++) {
-        for (int j = 0; j < sizeB; j++) {
-            if (arrA[i] == arrB[j]) {
-                arrC[indexC] = arrA[i];
-                indexC++;
+void findCommonElements(int n, int A[], int B[], int C[], int *sizeC) {
+    *sizeC = 0;
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (A[i] == B[j]) {
+                C[*sizeC] = A[i];
+                (*sizeC)++;
                 break;
             }
         }
     }
+}
 
-    printf("C (A and B):\n");
-    for (int i = 0; i < indexC; i++) {
-        printf("%d ", arrC[i]);
+int main() {
+    srand(time(NULL));
+    int n;
+    printf("size A and B: ");
+    scanf("%d", &n);
+
+    int A[n], B[n], C[n];
+    
+    printf("A:\n");
+    fill(n, A);
+    for (int i = 0; i < n; i++)
+        printf("%5d", A[i]);
+    printf("\n");
+
+    printf("B:\n");
+    fill(n, B);
+    for (int i = 0; i < n; i++)
+        printf("%5d", B[i]);
+    printf("\n");
+
+    int sizeC;
+    findCommonElements(n, A, B, C, &sizeC);
+    
+    printf("C:\n");
+    for (int i = 0; i < sizeC; i++) {
+        printf("%5d", C[i]);
     }
     printf("\n");
 
