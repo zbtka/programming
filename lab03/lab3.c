@@ -1,34 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    int arrA[] = {1, 7, 4, 3, 7};
-    int arrB[] = {2, 4, 7, 7, 3};
-    int sizeA = sizeof(arrA) / sizeof(arrA[0]);
-    int sizeB = sizeof(arrB) / sizeof(arrB[0]);
-    int maxSize;
+    int sizeA, sizeB;
+    srand(time(0));
 
-    if (sizeA > sizeB) {
-        maxSize = sizeA;
-    } else {
-        maxSize = sizeB;
+    printf("enter size A: ");
+    scanf("%d", &sizeA);
+    printf("enter size B: ");
+    scanf("%d", &sizeB);
+
+    int arrA[sizeA];
+    int arrB[sizeB];
+    
+    printf("array A:\n");
+    for (int i = 0; i < sizeA; i++) {
+        arrA[i] = rand() % 10;
+        printf("%d ", arrA[i]);
     }
+    printf("\n");
 
-    int arrC[maxSize];
+    printf("array B:\n");
+    for (int i = 0; i < sizeB; i++) {
+        arrB[i] = rand() % 10; 
+        printf("%d ", arrB[i]);
+    }
+    printf("\n");
 
-    int indexC = 0;
+    printf("\narray C:\n");
     for (int i = 0; i < sizeA; i++) {
         for (int j = 0; j < sizeB; j++) {
             if (arrA[i] == arrB[j]) {
-                arrC[indexC] = arrA[i];
-                indexC++;
+                printf("%d ", arrA[i]);
                 break;
             }
         }
-    }
-
-    printf("C (A and B):\n");
-    for (int i = 0; i < indexC; i++) {
-        printf("%d ", arrC[i]);
     }
     printf("\n");
 
