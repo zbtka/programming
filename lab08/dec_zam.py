@@ -17,7 +17,7 @@ def limit_calls(max_calls):
 def unique_values_closure():
     unique_values = set()
 
-    @limit_calls(3)
+    @limit_calls(2)
     def inner(*args):
         nonlocal unique_values
         unique_values.update(args)
@@ -25,8 +25,8 @@ def unique_values_closure():
 
     return inner
 
-# пример
+# пример использования
 unique_values = unique_values_closure()
-print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))  # Результат: [1, 2, 3, 4, 5, 6]
-print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))  # Результат: [1, 2, 3, 4, 5, 6, 7, 8]
+print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
+print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
 print(unique_values(9, 1, 2, 3, 4, 5, 6))
