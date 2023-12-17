@@ -30,6 +30,9 @@ unique_values = unique_values_closure()
 print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
 print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
 ```
+### Результат работы программы:
+
+![image](https://github.com/zbtka/programming/assets/144006033/1ec62143-2802-483a-b985-ce079114f954)
 
 ### Вариант кода декоратора:
 ```py
@@ -58,6 +61,10 @@ limited_function()
 limited_function() 
 limited_function()  
 ```
+### Результат работы программы:
+
+![image](https://github.com/zbtka/programming/assets/144006033/57ca1184-f4d2-4107-be8d-c395507e8b7d)
+
 ### Декоратор к замыканию 
 ```py
 import functools
@@ -79,7 +86,7 @@ def limit_calls(max_calls):
 def unique_values_closure():
     unique_values = set()
 
-    @limit_calls(3)
+    @limit_calls(2)
     def inner(*args):
         nonlocal unique_values
         unique_values.update(args)
@@ -87,12 +94,12 @@ def unique_values_closure():
 
     return inner
 
-# пример
+# пример использования
 unique_values = unique_values_closure()
-print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))  # Результат: [1, 2, 3, 4, 5, 6]
-print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))  # Результат: [1, 2, 3, 4, 5, 6, 7, 8]
+print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
+print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
 print(unique_values(9, 1, 2, 3, 4, 5, 6))
-```
-
+``` 
 ### Результат работы программы:
-![image](https://github.com/zbtka/programming/assets/144006033/8691ac01-ea37-4944-a410-2065e8aa168d)
+
+![image](https://github.com/zbtka/programming/assets/144006033/9d1a2761-83ce-4296-91c6-6c62697b8998)
