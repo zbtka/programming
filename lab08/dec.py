@@ -13,3 +13,12 @@ def limit_calls(max_calls):
                 return "Максимальное количество вызовов превышено"
         return wrapper
     return decorator
+
+@limit_calls(3)
+def limited_function():
+    print("Функция была вызвана")
+#пример
+limited_function()  
+limited_function()  
+limited_function() 
+limited_function()  
