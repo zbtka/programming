@@ -144,3 +144,8 @@ $$ f(n) =
 e^{-x-\frac{1}{x}}, & \quad 1 < x \leq 2.
 \end{cases}
 $$
+
+### Результат работы программы 5_3.py
+
+![image](https://github.com/zbtka/programming/assets/144006033/78b9c78a-b92c-497e-a8b1-3aa65d18b6b5)
+
