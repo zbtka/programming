@@ -39,7 +39,8 @@ for e in arl:
 print(count)
 ```
 ### Скриншот результата:
-![image](https://github.com/zbtka/programming/assets/144006033/ba89f77a-9493-4eaa-8736-8dbe79b24233)
+![image](https://github.com/zbtka/programming/assets/144006033/3c7e1dde-1df8-439c-a176-e7bc046c99bc)
+
 
 - Значение арифметического выражения $16^{18}+4^{10}-46−16$ записали в системе счисления с основанием 4. Сколько цифр 3 содержится в этой записи?
 
