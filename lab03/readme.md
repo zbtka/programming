@@ -22,61 +22,50 @@
 #include <stdlib.h>
 #include <time.h>
 
-void fill(int n, int a[]) {
-    for (int i = 0; i < n; i++)
-        a[i] = rand() % 11;
-}
+int main() {
+    int sizeA, sizeB;
+    srand(time(0));
 
-void findCommonElements(int n, int A[], int B[], int C[], int *sizeC) {
-    *sizeC = 0;
+    printf("enter size A: ");
+    scanf("%d", &sizeA);
+    printf("enter size B: ");
+    scanf("%d", &sizeB);
+
+    int arrA[sizeA];
+    int arrB[sizeB];
     
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (A[i] == B[j]) {
-                C[*sizeC] = A[i];
-                (*sizeC)++;
+    printf("array A:\n");
+    for (int i = 0; i < sizeA; i++) {
+        arrA[i] = rand() % 10;
+        printf("%d ", arrA[i]);
+    }
+    printf("\n");
+
+    printf("array B:\n");
+    for (int i = 0; i < sizeB; i++) {
+        arrB[i] = rand() % 10; 
+        printf("%d ", arrB[i]);
+    }
+    printf("\n");
+
+    printf("\narray C:\n");
+    for (int i = 0; i < sizeA; i++) {
+        for (int j = 0; j < sizeB; j++) {
+            if (arrA[i] == arrB[j]) {
+                printf("%d ", arrA[i]);
                 break;
             }
         }
-    }
-}
-
-int main() {
-    srand(time(NULL));
-    int n;
-    printf("size A and B: ");
-    scanf("%d", &n);
-
-    int A[n], B[n], C[n];
-    
-    printf("A:\n");
-    fill(n, A);
-    for (int i = 0; i < n; i++)
-        printf("%5d", A[i]);
-    printf("\n");
-
-    printf("B:\n");
-    fill(n, B);
-    for (int i = 0; i < n; i++)
-        printf("%5d", B[i]);
-    printf("\n");
-
-    int sizeC;
-    findCommonElements(n, A, B, C, &sizeC);
-    
-    printf("C:\n");
-    for (int i = 0; i < sizeC; i++) {
-        printf("%5d", C[i]);
     }
     printf("\n");
 
     return 0;
 }
-
 ```
 
 ## Результат работы программы:
-![image](https://github.com/zbtka/programming/assets/144006033/ab05e778-c049-47c5-bb46-8ca093deca74)
+![image](https://github.com/zbtka/programming/assets/144006033/2ab4a02f-04d2-4fe6-9e71-228d745a0905)
+
 
 
 ## 4. Список использованных источников
