@@ -13,30 +13,29 @@
 Настя составляет 6-буквенные коды из букв Н, А, С, Т, Я. Каждая допустимая гласная буква может входить в код не более одного раза. Сколько кодов может составить Настя?
 ```py
 import itertools
-alp = "АНДРЕЙ" 
-ar = itertools.product(alp, repeat=6) 
+
+alp = "НАСТЯ"
+ar = itertools.product(alp, repeat=6)
 arl = []
 for i in ar:
-    arl.append(''.join(i)) 
-count = 0  
+    arl.append(''.join(i))
+
+count = 0
 for e in arl:
-    if e[0] == 'Й':
+    if e.count('А') > 1 or e.count('Я') > 1:
         continue
-    if e[-1] == 'Й':
+    if e.startswith('А') or e.startswith('Я'):
         continue
-    if e.count('Й') > 1:
+    if e.endswith('А') or e.endswith('Я'):
         continue
-    if e.startswith('Й'):
-        continue
-    if e.endswith('Й'):
-        continue
-    flag = True  
-    for i in range(len(e)-1):
-        if (e[i] == 'Й' and e[i + 1] == 'Е') or (e[i + 1] == 'Й' and e[i] == 'Е'):
+    flag = True
+    for i in range(len(e) - 1):
+        if (e[i] == 'А' and e[i + 1] == 'Я') or (e[i + 1] == 'А' and e[i] == 'Я'):
             flag = False
             break
-    if flag == True:
-        count += 1  
+    if flag:
+        count += 1
+
 print(count)
 ```
 ### Скриншот результата:
