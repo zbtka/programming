@@ -73,7 +73,7 @@
 ![image](https://github.com/zbtka/programming/assets/144006033/81c9ef21-d284-4ba7-8c51-01b9b32136e3)
 
 # 19
-![image](https://github.com/zbtka/programming/assets/144006033/c541d8a0-3be7-4478-8362-07c0d1e1d083)
+![изображение](https://github.com/zbtka/programming/assets/144006033/d579b116-d73b-43d3-90fd-edd77c78288a)
 
 # 20
 ![image](https://github.com/zbtka/programming/assets/144006033/de1fb1f0-bcfb-4008-b4d2-f47e267c71a3)
