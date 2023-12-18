@@ -9,17 +9,19 @@ x = np.linspace(1, 4, 100)
 
 y = [f(i) for i in x]
 
+w = 2.3
+
 plt.plot(x, y, label="e^(-x-1/2)")
 
 def df(x):
     return -math.exp(-x - 1/2)
 
-tangent_slope = df(2.3)
+tangent_slope = df(w)
 
-tangent = [f(2.3) + tangent_slope*(i - 2.3) for i in x]
+tangent = [f(w) + tangent_slope*(i - w) for i in x]
 
 plt.plot(x, tangent, label="kasatelnaya x=2.3")
-plt.plot(2.3, 0.061, "ro")
+plt.plot(w, f(w), "ro")
 
 plt.xlabel('x')
 plt.ylabel('y')
