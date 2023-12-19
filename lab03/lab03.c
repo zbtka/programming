@@ -28,7 +28,7 @@ int main() {
     int maxSize = sizeA > sizeB ? sizeA : sizeB; 
     int *arrC = (int *)malloc(maxSize * sizeof(int));  
 
-    int sizeC = 0;  // Текущий размер массива C
+    int sizeC = 0; 
 
     for (int i = 0; i < sizeA; i++) {
         bool isDuplicate = false; 
