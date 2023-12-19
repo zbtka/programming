@@ -17,43 +17,46 @@
 ### Вариант кода с использования рекурсии.
 ```py
 def to_str(input_list):
-    if not input_list:  
-        return 'None'
-
-    if isinstance(input_list[0], list):  
-        return to_str(input_list[0]) + ' -> ' + to_str(input_list[1:])   
-    else:
-        if len(input_list) == 1:  
-            return str(input_list[0]) + ' -> None'  
+    result = ""
+    for item in input_list:
+        if isinstance(item, list):
+            result += to_str(item) + " -> "
         else:
-            return str(input_list[0]) + ' -> ' + to_str(input_list[1:]) 
-nested_list = [1, [2, [3, [4, [5]]]]]
-result_str = to_str(nested_list)
-print(result_str)
+            result += str(item) + " -> "
+    result += "None"
+    return result
+test_list = [1, [2, [3, [4, [5]]]]]
+print(to_str(test_list))
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/4e419ea7-a18a-40cc-9806-160555591241)
+![image](https://github.com/zbtka/programming/assets/144006033/fd12cf4c-d0ab-4ff3-a3f2-22efbfbf8d85)
+
 
 
 ### Вариант кода без использования рекурсии.
 ```py
-def to_str(input_list):
-    result = " "
-    for item in input_list:
-        if isinstance(item, list):
-            result += to_str(item) + ' -> '
+def to_str(lst):
+    result = []
+    stack = [lst]
+    while stack:
+        current = stack.pop()
+        if isinstance(current, list):
+            if current:
+                stack.extend(reversed(current[1:]))
+                stack.append(current[0])
+            else:
+                result.append("None")  
         else:
-            result += str(item) + ' -> '
-    result += 'None'
-    return result
-
+            result.append(str(current))
+    result.append("None") 
+    return " -> ".join(result)
 nested_list = [1, [2, [3, [4, [5]]]]]
-result_str = to_str(nested_list)
-print(result_str)
+print(to_str(nested_list))
 
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/d7db4d0a-277a-481a-988c-6d89421fdfea)
+![image](https://github.com/zbtka/programming/assets/144006033/6ebd7db4-2c22-4b04-8f93-5df5c43b67b1)
+
 
 
 * Функция для расчёта
@@ -61,57 +64,40 @@ $a_i = a_{i-2}+\frac{a_{i-1}}{a^{a-1}}. a_0=a_1=1$
 
 ### Вариант кода без использования рекурсии.
 ```py
-def calculate_recursive(expression):
-    if isinstance(expression, list):
-        operand1 = calculate_recursive(expression[1])
-        operand2 = calculate_recursive(expression[2])
-        operator = expression[0]
-        if operator == '+':
-            return operand1 + operand2
-        elif operator == '-':
-            return operand1 - operand2
-        elif operator == '*':
-            return operand1 * operand2
-        elif operator == '/':
-            return operand1 / operand2
-    else:
-        return expression
-
-# пример
-expr = ['+', 5, ['*', 3, 2]]  # результат: 11
-result = calculate_recursive(expr)
-print(result)
+def calculate_a_iterative(i, a):
+    if i < 2:
+        return 1
+    a_values = [1, 1] 
+    for n in range(2, i+1):
+        a_n = a_values[n-2] + (a_values[n-1] / (a ** (a-1)))
+        a_values.append(a_n)
+    return a_values[i]
+i_value = 5
+a_value = 2
+result = calculate_a_iterative(i_value, a_value)
+print(f"i={i_value} и a={a_value} = {result}")
 
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/0a3cb15f-81dd-423f-973f-a1debc8971e8)
+![image](https://github.com/zbtka/programming/assets/144006033/f58bfe2f-733a-4129-bb76-1910209f7f73)
+
 
 
 ### Вариант кода c использованием рекурсии.
 ```py
-def calculate_recursive(expression):
-    if isinstance(expression, list):
-        operand1 = calculate_recursive(expression[1])
-        operand2 = calculate_recursive(expression[2])
-        operator = expression[0]
-        if operator == '+':
-            return operand1 + operand2
-        elif operator == '-':
-            return operand1 - operand2
-        elif operator == '*':
-            return operand1 * operand2
-        elif operator == '/':
-            return operand1 / operand2
+def calculate_a(i, a):
+    if i < 2:
+        return 1
     else:
-        return expression
+        return calculate_a(i-2, a) + (calculate_a(i-1, a) / (a ** (a-1)))
 
-# пример
-expr = ['+', 5, ['*', 3, 2]]  # результат: 11
-result = calculate_recursive(expr)
-print(result)
+i_value = 5
+a_value = 2
+result = calculate_a(i_value, a_value)
+print(f"i={i_value} и a={a_value} = {result}")
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/dfe48246-be54-4811-93e0-1e539713a718)
+![image](https://github.com/zbtka/programming/assets/144006033/6b8db666-f14a-4805-833b-3c59eba3bb28)
 
 
 
