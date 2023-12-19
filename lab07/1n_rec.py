@@ -1,13 +1,10 @@
-def to_str(input_list):
-    result = " "
-    for item in input_list:
-        if isinstance(item, list):
-            result += to_str(item) + ' -> '
-        else:
-            result += str(item) + ' -> '
-    result += 'None'
-    return result
-
-nested_list = [1, [2, [3, [4, [5]]]]]
-result_str = to_str(nested_list)
-print(result_str)
+def to_str(lst):
+    if lst is None:
+        return "None"
+    if isinstance(lst, list):
+        if len(lst) == 0:
+            return "None"
+        return " -> ".join(map(to_str, lst)) + " -> None"
+    return str(lst)
+result = to_str([1, [2, [3, [4, [5]]]]])
+print(result)
