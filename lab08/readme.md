@@ -83,23 +83,19 @@ def limit_calls(max_calls):
         return wrapper
     return decorator
 
-def unique_values_closure():
+@limit_calls(3)
+def unique_values_closure(*args):
     unique_values = set()
+    unique_values.update(args)
+    return list(unique_values)
 
-    @limit_calls(2)
-    def inner(*args):
-        nonlocal unique_values
-        unique_values.update(args)
-        return list(unique_values)
+print(unique_values_closure(1, 2, 3, 2, 4, 5, 3, 6))
+print(unique_values_closure(5, 6, 7, 8, 1, 2, 3, 4))
+print(unique_values_closure(9, 1, 2, 3, 4, 5, 6, 3))
+print(unique_values_closure(2, 0, 3, 0, 2, 4, 8, 5))
 
-    return inner
-
-# пример использования
-unique_values = unique_values_closure()
-print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
-print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
-print(unique_values(9, 1, 2, 3, 4, 5, 6))
 ``` 
 ### Результат работы программы:
 
-![image](https://github.com/zbtka/programming/assets/144006033/9d1a2761-83ce-4296-91c6-6c62697b8998)
+![image](https://github.com/zbtka/programming/assets/144006033/3b57e00a-1d8a-419c-8ff3-1e88d8591b41)
+
