@@ -16,17 +16,17 @@
 
 ### Вариант кода с использования рекурсии.
 ```py
-def to_str(input_list):
-    result = ""
-    for item in input_list:
-        if isinstance(item, list):
-            result += to_str(item) + " -> "
+def to_str(input_list, is_outer=True):
+    if isinstance(input_list, list):
+        result = [to_str(item, False) for item in input_list]
+        if is_outer:
+            return ' -> '.join(result) + ' -> None'
         else:
-            result += str(item) + " -> "
-    result += "None"
-    return result
-test_list = [1, [2, [3, [4, [5]]]]]
-print(to_str(test_list))
+            return ' -> '.join(result)
+    else:
+        return str(input_list) if input_list is not None else 'None'
+result = to_str([1, [2, [3, [4, [5]]]]])
+print(result)
 ```
 ### Результат работы программы
 ![image](https://github.com/zbtka/programming/assets/144006033/fd12cf4c-d0ab-4ff3-a3f2-22efbfbf8d85)
