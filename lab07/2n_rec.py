@@ -10,3 +10,4 @@ i_value = 5
 a_value = 2
 result = calculate_a_iterative(i_value, a_value)
 print(f"i={i_value} и a={a_value} = {result}")
+
