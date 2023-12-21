@@ -16,20 +16,17 @@
 
 ### Вариант кода с использования рекурсии.
 ```py
-def to_str(input_list, is_outer=True):
-    if isinstance(input_list, list):
-        result = [to_str(item, False) for item in input_list]
-        if is_outer:
-            return ' -> '.join(result) + ' -> None'
-        else:
-            return ' -> '.join(result)
+def calculate_a(i):
+    if i == 0 or i == 1:
+        return 1
     else:
-        return str(input_list) if input_list is not None else 'None'
-result = to_str([1, [2, [3, [4, [5]]]]])
+        return calculate_a(i-2) + calculate_a(i-1) / (2**(i-1))
+result = calculate_a(5)
 print(result)
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/fd12cf4c-d0ab-4ff3-a3f2-22efbfbf8d85)
+![image](https://github.com/zbtka/programming/assets/144006033/8d995ff0-8424-4e44-b5a4-d3dabb4b8bec)
+
 
 
 
@@ -79,22 +76,20 @@ print(f"i={i_value} и a={a_value} = {result}")
 
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/f58bfe2f-733a-4129-bb76-1910209f7f73)
+![image](https://github.com/zbtka/programming/assets/144006033/4200d0d5-f618-49bf-b79a-4ca178219b20)
+
 
 
 
 ### Вариант кода c использованием рекурсии.
 ```py
-def calculate_a(i, a):
-    if i < 2:
-        return 1
-    else:
-        return calculate_a(i-2, a) + (calculate_a(i-1, a) / (a ** (a-1)))
-
-i_value = 5
-a_value = 2
-result = calculate_a(i_value, a_value)
-print(f"i={i_value} и a={a_value} = {result}")
+def calculate_a_iterative(n):
+    a = [1, 1]
+    for i in range(2, n+1):
+        a.append(a[i-2] + a[i-1] / (2**(i-1)))
+    return a[n]
+result_iterative = calculate_a_iterative(5)
+print(result_iterative)
 ```
 ### Результат работы программы
 ![image](https://github.com/zbtka/programming/assets/144006033/6b8db666-f14a-4805-833b-3c59eba3bb28)
