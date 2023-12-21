@@ -1,10 +1,7 @@
-def calculate_a(i, a):
-    if i < 2:
-        return 1
-    else:
-        return calculate_a(i-2, a) + (calculate_a(i-1, a) / (a ** (a-1)))
-
-i_value = 5
-a_value = 2
-result = calculate_a(i_value, a_value)
-print(f"i={i_value} и a={a_value} = {result}")
+def calculate_a_iterative(n):
+    a = [1, 1]
+    for i in range(2, n+1):
+        a.append(a[i-2] + a[i-1] / (2**(i-1)))
+    return a[n]
+result_iterative = calculate_a_iterative(5)
+print(result_iterative)
