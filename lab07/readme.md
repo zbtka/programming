@@ -16,16 +16,21 @@
 
 ### Вариант кода с использования рекурсии.
 ```py
-def calculate_a(i):
-    if i == 0 or i == 1:
-        return 1
+def to_str(input_list, is_outer=True):
+    if isinstance(input_list, list):
+        result = [to_str(item, False) for item in input_list]
+        if is_outer:
+            return ' -> '.join(result) + ' -> None' 
+        else:
+            return ' -> '.join(result)
     else:
-        return calculate_a(i-2) + calculate_a(i-1) / (2**(i-1))
-result = calculate_a(5)
+        return str(input_list) if input_list is not None else 'None'
+result = to_str([1, [2, [3, [4, [5]]]]])
 print(result)
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/8d995ff0-8424-4e44-b5a4-d3dabb4b8bec)
+![image](https://github.com/zbtka/programming/assets/144006033/90a297b2-3fc8-4874-acb6-e1613cee6b2b)
+
 
 
 
@@ -92,7 +97,7 @@ result_iterative = calculate_a_iterative(5)
 print(result_iterative)
 ```
 ### Результат работы программы
-![image](https://github.com/zbtka/programming/assets/144006033/6b8db666-f14a-4805-833b-3c59eba3bb28)
+![image](https://github.com/zbtka/programming/assets/144006033/1b89d765-07d0-4388-a9aa-4a7b7f3fd71f)
 
 
 
