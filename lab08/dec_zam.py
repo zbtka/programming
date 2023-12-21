@@ -13,20 +13,14 @@ def limit_calls(max_calls):
                 return "Максимальное количество вызовов превышено!"
         return wrapper
     return decorator
-
-def unique_values_closure():
+    
+@limit_calls(4)
+def unique_values_closure(*args):
     unique_values = set()
-
-    @limit_calls(2)
-    def inner(*args):
-        nonlocal unique_values
-        unique_values.update(args)
-        return list(unique_values)
-
-    return inner
-
-# пример использования
-unique_values = unique_values_closure()
-print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
-print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
-print(unique_values(9, 1, 2, 3, 4, 5, 6))
+    unique_values.update(args)
+    return list(unique_values)
+    
+print(unique_values_closure(1, 2, 3, 2, 4, 5, 3, 6))
+print(unique_values_closure(5, 6, 7, 8, 1, 2, 3, 4))
+print(unique_values_closure(9, 1, 2, 3, 4, 5, 6, 3))
+print(unique_values_closure(2, 0, 3, 0, 2, 4, 8, 5))
