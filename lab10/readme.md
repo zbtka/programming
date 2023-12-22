@@ -15,30 +15,18 @@
 
 ##### Лабораторная работа №7
 ```py
-def calculate_recursive(expression):
-    if isinstance(expression, list):
-        operand1 = calculate_recursive(expression[1])
-        operand2 = calculate_recursive(expression[2])
-        operator = expression[0]
-        if operator == '+':
-            return operand1 + operand2
-        elif operator == '-':
-            return operand1 - operand2
-        elif operator == '*':
-            return operand1 * operand2
-        elif operator == '/':
-            return operand1 / operand2
-    else:
-        return expression
-
-# пример
-expr = ['+', 5, ['*', 3, 2]]  # результат: 11
-result = calculate_recursive(expr)
-print(result)
+def calculate_a_iterative(n):
+    a = [1, 1]
+    for i in range(2, n+1):
+        a.append(a[i-2] + a[i-1] / (2**(i-1)))
+    return a[n]
+result_iterative = calculate_a_iterative(5)
+print(result_iterative)
 ```
 
 ##### Лабораторная работа №8
 ```py
+import functools
 
 def limit_calls(max_calls):
     def decorator(func):
@@ -53,23 +41,17 @@ def limit_calls(max_calls):
                 return "Максимальное количество вызовов превышено!"
         return wrapper
     return decorator
-
-def unique_values_closure():
+    
+@limit_calls(4)
+def unique_values_closure(*args):
     unique_values = set()
-
-    @limit_calls(2)
-    def inner(*args):
-        nonlocal unique_values
-        unique_values.update(args)
-        return list(unique_values)
-
-    return inner
-
-# пример использования
-unique_values = unique_values_closure()
-print(unique_values(1, 2, 3, 2, 4, 5, 3, 6))
-print(unique_values(5, 6, 7, 8, 1, 2, 3, 4))
-print(unique_values(9, 1, 2, 3, 4, 5, 6))
+    unique_values.update(args)
+    return list(unique_values)
+    
+print(unique_values_closure(1, 2, 3, 2, 4, 5, 3, 6))
+print(unique_values_closure(5, 6, 7, 8, 1, 2, 3, 4))
+print(unique_values_closure(9, 1, 2, 3, 4, 5, 6, 3))
+print(unique_values_closure(2, 0, 3, 0, 2, 4, 8, 5))
 ```
 
 ##### Лабораторная работа №9
