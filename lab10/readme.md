@@ -10,7 +10,8 @@
 * Ссылки на используемые материалы
 
 #### Создание пакета модулей
-![image](https://github.com/zbtka/programming/assets/144006033/a85a0c31-1434-47c9-a35b-ee7040274f91)
+![image](https://github.com/zbtka/programming/assets/144006033/ac6fc796-ad3f-4fb7-8632-62c7db04b565)
+
 
 ##### Лабораторная работа №7
 ```py
