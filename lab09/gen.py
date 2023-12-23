@@ -1,13 +1,14 @@
-import itertools
+import itertools, more_itertools
 
-def unique_combinations_generator(*iterables):
-    for combination in itertools.product(*iterables):
-        yield combination
+s = [[1, 2,],['a','b'],['x','y']]
+seq = [0,1,2,0]
 
-sequence1 = [1, 2, 3]
-sequence2 = ['a', 'b', 'c']
-sequence3 = ['x', 'y']
+#создаём перестановку индексов
+for p in more_itertools.distinct_permutations(seq):
 
-combinations = unique_combinations_generator(sequence1, sequence2, sequence3)
-for combo in combinations:
-    print(combo)
+    #и на её основе перестановку последовательностей
+    perm = [s[o] for o in p]
+
+    #и теперь комбинацию
+    for combination in itertools.product(*perm):
+        print(list(combination))
