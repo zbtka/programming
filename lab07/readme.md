@@ -66,18 +66,15 @@ $a_i = a_{i-2}+\frac{a_{i-1}}{2^{i-1}}. a_0=a_1=1$
 
 ### Вариант кода без использования рекурсии.
 ```py
-def calculate_a_iterative(i, a):
-    if i < 2:
-        return 1
-    a_values = [1, 1] 
-    for n in range(2, i+1):
-        a_n = a_values[n-2] + (a_values[n-1] / (a ** (a-1)))
-        a_values.append(a_n)
-    return a_values[i]
-i_value = 5
-a_value = 2
-result = calculate_a_iterative(i_value, a_value)
-print(f"i={i_value} и a={a_value} = {result}")
+def calculate_sequence(n):
+    a = [1, 1]
+    for i in range(2, n + 1):
+        a_i = a[i - 2] + a[i - 1] / (2 ** (i - 1))
+        a.append(a_i)
+    return a[-1]  
+
+result = calculate_sequence(5)
+print(result)
 
 ```
 ### Результат работы программы
@@ -88,13 +85,14 @@ print(f"i={i_value} и a={a_value} = {result}")
 
 ### Вариант кода c использованием рекурсии.
 ```py
-def calculate_a_iterative(n):
-    a = [1, 1]
-    for i in range(2, n+1):
-        a.append(a[i-2] + a[i-1] / (2**(i-1)))
-    return a[n]
-result_iterative = calculate_a_iterative(5)
-print(result_iterative)
+def calculate_sequence(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return calculate_sequence(n - 2) + calculate_sequence(n - 1) / (2 ** (n - 1))
+
+sequence = [calculate_sequence(i) for i in range(0, 11)]
+print(sequence)
 ```
 ### Результат работы программы
 ![image](https://github.com/zbtka/programming/assets/144006033/1b89d765-07d0-4388-a9aa-4a7b7f3fd71f)
