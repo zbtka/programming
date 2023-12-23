@@ -34,6 +34,7 @@ for p in more_itertools.distinct_permutations(seq):
 
 ### Результат работы программы:
 
-![image](https://github.com/zbtka/programming/assets/144006033/254d59d3-ef7e-4a71-8241-a2e7def1dcfb)
+![image](https://github.com/zbtka/programming/assets/144006033/880642dd-7f80-43a4-b678-232fb86833c3)
+
 
 
