@@ -15,26 +15,22 @@
 
 ### Вариант кода:
 ```py
-import itertools, more_itertools
+import itertools
 
-s = [[1, 2,],['a','b'],['x','y']]
-seq = [0,1,2,0]
-
-#создаём перестановку индексов
-for p in more_itertools.distinct_permutations(seq):
-
-    #и на её основе перестановку последовательностей
-    perm = [s[o] for o in p]
-
-    #и теперь комбинацию
-    for combination in itertools.product(*perm):
-        print(list(combination))
-
+def generate_combinations(*args):
+    for combination in itertools.product(*args):
+                yield combination
+seq1 = [1, 2, 3]
+seq2 = ['a', 'b', 'c', 'd']
+seq3 = ('x','y')
+combinations = generate_combinations(seq1,seq2, seq3)
+for combo in combinations:
+    print(combo)
 ```
 
 ### Результат работы программы:
 
-![image](https://github.com/zbtka/programming/assets/144006033/880642dd-7f80-43a4-b678-232fb86833c3)
+![image](https://github.com/zbtka/programming/assets/144006033/9228c090-8aed-4e66-9130-8fa2dd19cc90)
 
 
 
