@@ -1,12 +1,11 @@
 import itertools
 
-def generate_combinations_with_permutations(sequence1, sequence2, sequence3):
-    sequences = [sequence1, sequence2, sequence3]
-    for permuted_sequences in itertools.permutations(sequences):
-        for combo in itertools.product(*permuted_sequences):
-            yield ''.join(combo)          
-sequence1 = "AB"
-sequence2 = "12"
-sequence3 = "xy"
-for combo in generate_combinations_with_permutations(sequence1, sequence2, sequence3):
+def generate_combinations(*args):
+    for combination in itertools.product(*args):
+                yield combination
+seq1 = [1, 2, 3]
+seq2 = ['a', 'b', 'c', 'd']
+seq3 = ('x','y')
+combinations = generate_combinations(seq1,seq2, seq3)
+for combo in combinations:
     print(combo)
