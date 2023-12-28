@@ -15,13 +15,27 @@
 
 ##### Лабораторная работа №7
 ```py
+def to_str(input_list, is_outer=True,):
+    if not input_list:
+        return "None"
+    elif isinstance(input_list, list):
+        result = [to_str(item, False) for item in input_list]
+        if is_outer:
+            return ' -> '.join(result) + ' -> None' 
+        else:
+            return ' -> '.join(result)
+    else:
+        return str(input_list) if input_list is not "None" else 'None'
+
+
+#___________________________________________________________________________#
+
 def calculate_a_iterative(n):
     a = [1, 1]
     for i in range(2, n+1):
         a.append(a[i-2] + a[i-1] / (2**(i-1)))
     return a[n]
-result_iterative = calculate_a_iterative(5)
-print(result_iterative)
+
 ```
 
 ##### Лабораторная работа №8
@@ -42,33 +56,25 @@ def limit_calls(max_calls):
         return wrapper
     return decorator
     
-@limit_calls(4)
-def unique_values_closure(*args):
+def unique_values_closure():
     unique_values = set()
-    unique_values.update(args)
-    return list(unique_values)
-    
-print(unique_values_closure(1, 2, 3, 2, 4, 5, 3, 6))
-print(unique_values_closure(5, 6, 7, 8, 1, 2, 3, 4))
-print(unique_values_closure(9, 1, 2, 3, 4, 5, 6, 3))
-print(unique_values_closure(2, 0, 3, 0, 2, 4, 8, 5))
+    @limit_calls(1)
+
+    def inner(*args):
+        nonlocal unique_values
+        unique_values.update(args)
+        return list(unique_values)
+
+    return inner
 ```
 
 ##### Лабораторная работа №9
 ```py
 import itertools
 
-def unique_combinations_generator(*iterables):
-    for combination in itertools.product(*iterables):
-        yield combination
-
-sequence1 = [1, 2, 3]
-sequence2 = ['a', 'b', 'c']
-sequence3 = ['x', 'y']
-
-combinations = unique_combinations_generator(sequence1, sequence2, sequence3)
-for combo in combinations:
-    print(combo)
+def generate_combinations(*args):
+    for combination in itertools.product(*args):
+                yield combination
 ```
 
 #### 2.Напишите запускающий модуль на основе Typer, который позволит выбирать и настраивать параметры запуска логики из пакета.
