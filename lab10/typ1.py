@@ -14,13 +14,13 @@ def gen(name: gen, seq: str = typer.Option()):
 def dec_zam(*args: str):
     uv_func = unique_values_closure()
     result = uv_func(*args)
-    typer.echo(result)
+    print(dec_zam)
 
 
 @app.command()
 def rec(input_list: str):
     converted = rec.to_str(eval(input_list))
-    typer.echo(converted)
+    print(rec)
 
 
 def main():
