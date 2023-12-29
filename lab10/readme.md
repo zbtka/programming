@@ -89,12 +89,27 @@ app = typer.Typer()
 @app.command()
 def gen1(seq: str):
     args = eval(seq)
-    print(gen.generate_combinations(*args))
-for 
+    for combo in gen.generate_combinations(*args):
+        print(combo)
+
+
 
 @app.command()
-def rec(a: str):
-    print(a)
+def rec1(a: str):
+    str1 = eval(a)
+    print(rec.to_str(str1))
+        
+
+@app.command()
+def rec2(n: int):
+    print(rec.calculate_a_iterative(n))
+
+
+@app.command()
+def zam(l:str):
+    args = eval(l)
+    lim = dec_zam.unique_values_closure()
+    print(lim(*args))
 
 
 if __name__ == "__main__":
