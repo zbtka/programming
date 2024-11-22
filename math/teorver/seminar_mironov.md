@@ -16,31 +16,24 @@ $$
 $$
 S \approx \Sigma i = 1^N \cdot f(x_i, y_i, z_i)
 $$
-
+Интеграл:
 $$
-I \approx \frac{1}{N \cdot S}
+\\
+    \iint \limits_D \sqrt{x^2 + y^2} \cdot d \cdot \sigma
+\\
 $$
-
+Область интегрирования:
 $$
-V \approx \frac{(V(D))}{N} \cdot \Sigma i = 1^N \cdot f(x_i, y_i, z_i)
+    \sigma - {часть} {параболоида} 4z = x^2 + y^2, {отсекаемая} {цилиндром} {y^2 = z} и {плоскостью} z = 3
 $$
-
+Уровень надежности:
 $$
-\Delta = |I_{приближенное} - I_{аналитическое}|
-$$
-
-$$
-N \geq (\frac{Z_{\frac{α}{2}} \cdot \sigma}{\epsilon})^2
+\epsilon = 0.04
 $$
 
-
-
-
-
-
-
-
-
+$$
+I \approx 3.154 \pm 0.003
+$$
 
 
 
